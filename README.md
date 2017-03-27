@@ -11,7 +11,8 @@
 - [FOSSASIA](https://github.com/fossasia) - Open Technologies in Asia. ([Join](https://github.com/fossasia/fossasia.org/issues/new?title=Join%20FOSSASIA&body=Hi,%20could%20you%20invite%20me%20to%20the%20FOSSASIA%20GitHub%20organization?))
 - [AppStackTop](https://github.com/AppStackTop) - AppStack. ([Join](https://orgmanager.miguelpiedrafita.com/o/AppStackTop))
 - [LogikIO](https://github.com/LogikIO) - Logik.IO. ([Join](https://orgmanager.miguelpiedrafita.com/o/LogikIO))
-- [miRTop](https://github.com/miRTop) - miRNA transcriptome open project ([Join](https://orgmanager.miguelpiedrafita.com/o/miRTop))
+- [miRTop](https://github.com/miRTop) - miRNA transcriptome open project. ([Join](https://orgmanager.miguelpiedrafita.com/o/miRTop))
+- [SlyFoxStudios](https://github.com/SlyFoxStudios) - We are a game making group. Here to release our games source code. ([Join](https://orgmanager.miguelpiedrafita.com/o/SlyFoxStudios))
 
 ## License
 
