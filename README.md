@@ -7,6 +7,7 @@
 <br>
 
 - [OrgManager](https://github.com/orgmanager) - Supercharge your GitHub organizations! ([Join](https://orgmanager.miguelpiedrafita.com/o/orgmanager))
+- [Open Source Design](https://github.com/opensourcedesign) - Bringing together designers and open source projects, join us on IRC #opensourcedesign ([Join](https://orgmanager.miguelpiedrafita.com/o/opensourcedesign))
 
 ## License
 
