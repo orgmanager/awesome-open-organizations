@@ -14,6 +14,7 @@
 - [miRTop](https://github.com/miRTop) - miRNA transcriptome open project. ([Join](https://orgmanager.miguelpiedrafita.com/o/miRTop))
 - [SlyFoxStudios](https://github.com/SlyFoxStudios) - We are a game making group. Here to release our games source code. ([Join](https://orgmanager.miguelpiedrafita.com/o/SlyFoxStudios))
 - [Programmers' Thinking Pub](https://github.com/ptp) - A place for developers to chat and collaborate. ([Join](https://orgmanager.miguelpiedrafita.com/o/ptp) - Needs a password, ask for it!)
+- [libscode](https://github.com/libscode) - The development resource project based on information technology. ([Join](https://orgmanager.miguelpiedrafita.com/o/libscode))
 
 ## License
 
