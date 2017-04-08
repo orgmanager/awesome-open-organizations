@@ -1,46 +1,65 @@
 ruleset:
 
-  respond_to_me:
-  
-    name: Respond to me when I comment mentioning @VarCI-bot
-    events: [ issue_comment ]
-    when:
-      - action = "created"
-      - user.login = "m1guelpf"
-      - body contains "@VarCI-bot"
-    comment: |
-      Perfect @{{ user.login }} - now replace the first two rules with your own!
-  
-      If you wish to keep the third rule, you can merge by starting a comment with "LGTM".
-  
-      Please see the following resources if you get stuck - best of luck!
-  
-      - [Documentation](https://var.ci/docs)
-      - [Support](https://var.ci/support)
-  
-  merge_for_me:
-  
-    name: Merge pull requests for me when I start a comment with "LGTM"
-    events: [ issue_comment ]
-    when:
-      - action = "created"
-      - user.login = "m1guelpf"
-      - body matches "/^LGTM/"
-    merge: true
-  
-  welcome_me:
-  
-    name: Introduce me to VarCI when I open a pull request
+  body_link:
+    name: "Pull requests that add links should also include them in the body"
     events: [ pull_request ]
     when:
       - action = "opened"
-      - user.login = "m1guelpf"
+      - files = ["README.md"]
+      - deletions = 0
+      - not (body_links.added contains diff_links.added)
     comment: |
-      Welcome to VarCI @{{ user.login }}!
-  
-      Continue pushing changes to the config in this branch and I'll validate the changes.
-  
-      You can also test out new rules in your pull requests before merging them.
-  
-      For example, try triggering the second rule by mentioning me (@VarCI-bot) right now!
-  
+      This pull request adds the following suggestion:
+
+      {{ diff.added.0 }}
+
+  broken_link:
+    name: "Pull request diff contains broken links"
+    events: [ pull_request ]
+    when:
+      - action = "opened"
+      - count(diff_links.broken) > 0
+    comment: >
+      @{{ user.login }}, at least one of the links in the pull request diff was
+      reported as broken:
+
+      - {{ diff_links.broken.0 }}
+
+  missing_link:
+    name: "Suggestions should include a link"
+    events: [ pull_request ]
+    when:
+      - action = "opened"
+      - files = ["README.md"]
+      - deletions = 0
+      - additions = 1
+      - count(grep("/^\* /", diff.added)) = 1
+      - count(diff_links.added) != 1
+    comment: >
+      @{{ user.login }}, it looks like you have added a new suggestion to the
+      `README.md` file but haven't linked to the project. Please update the
+      `README.md` to also link to the project, thanks!
+
+  multiple_additions:
+    name: "Pull request should only suggest one addition at a time"
+    events: [ pull_request ]
+    comment: |
+      @{{ user.login }}, it looks like you are trying to add multiple suggestions in a single pull request.
+
+      If so, please split these into multiple pull requests so each item's inclusion in the list can be discussed separately.
+    when:
+      - action = "opened"
+      - files = ["README.md"]
+      - deletions = 0
+      - count(grep("/^\* /", diff.added)) > 1
+
+  needs_explanation:
+    name: 'Pull request bodies should have a detailed explanation'
+    events: [ pull_request ]
+    label: 'needs: explanation'
+    when:
+      - action = "opened"
+      - length(body) < 25
+    message: >
+      @{{ user.login }}, please update the pull request body with a description
+      of what you are adding or changing (of at least 25 characters).
