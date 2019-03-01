@@ -15,6 +15,7 @@
 - [SlyFoxStudios](https://github.com/SlyFoxStudios) - We are a game making group. Here to release our games source code. ([Join](https://orgmanager.miguelpiedrafita.com/o/SlyFoxStudios))
 - [libscode](https://github.com/libscode) - The development resource project based on information technology. ([Join](https://orgmanager.miguelpiedrafita.com/o/libscode))
 - [GitIndonesia](https://github.com/GitIndonesia) - Komunitas Git Indonesia. ([Join](https://orgmanager.miguelpiedrafita.com/o/GitIndonesia))
+- [Malware-Haters](https://github.com/Malware-Haters) - A group of people trying to stop malware together. ([Join](https://orgmanager.miguelpiedrafita.com/join/40185484))
 
 ## License
 
